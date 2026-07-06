@@ -1,0 +1,7 @@
+kokoro>=0.9
+fastapi>=0.115
+uvicorn[standard]>=0.34
+pymupdf>=1.25
+soundfile>=0.13
+numpy>=1.26
+python-multipart>=0.0.18

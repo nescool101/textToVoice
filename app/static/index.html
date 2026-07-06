@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>textToVoice</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <h1>textToVoice</h1>
+    <p class="subtitle">Upload a PDF and listen to it</p>
+
+    <!-- Step 1: Upload -->
+    <section id="upload-section">
+      <label for="pdf-input" class="drop-zone" id="drop-zone">
+        <span>Drop a PDF here or click to browse</span>
+        <input type="file" id="pdf-input" accept=".pdf" hidden />
+      </label>
+      <p id="file-info" class="file-info" hidden></p>
+    </section>
+
+    <!-- Step 2: Controls (shown after upload) -->
+    <section id="controls-section" hidden>
+      <div class="control-row">
+        <label for="lang-select">Language</label>
+        <select id="lang-select">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+        </select>
+      </div>
+
+      <div class="control-row">
+        <label for="voice-select">Voice</label>
+        <select id="voice-select"></select>
+      </div>
+
+      <div class="control-row">
+        <label for="speed-range">Speed: <span id="speed-value">1.0</span>x</label>
+        <input type="range" id="speed-range" min="0.5" max="2.0" step="0.1" value="1.0" />
+      </div>
+
+      <button id="read-btn" class="primary-btn">Read PDF</button>
+    </section>
+
+    <!-- Step 3: Playback -->
+    <section id="playback-section" hidden>
+      <p id="status-msg">Generating audio...</p>
+      <audio id="audio-player" controls></audio>
+      <button id="download-btn" hidden>Download WAV</button>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
