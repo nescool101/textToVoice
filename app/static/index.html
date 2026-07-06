@@ -23,6 +23,14 @@
     <!-- Step 2: Controls (shown after upload) -->
     <section id="controls-section" hidden>
       <div class="control-row">
+        <label>Start on page</label>
+        <div class="page-range">
+          <input type="number" id="page-start" min="1" value="1" />
+          <span id="page-total" class="page-total"></span>
+        </div>
+      </div>
+
+      <div class="control-row">
         <label for="lang-select">Language</label>
         <select id="lang-select">
           <option value="en">English</option>
@@ -46,8 +54,13 @@
     <!-- Step 3: Playback -->
     <section id="playback-section" hidden>
       <p id="status-msg">Generating audio...</p>
+      <div class="playback-controls">
+        <button id="prev-btn" class="nav-btn" title="Previous page">&larr; Prev</button>
+        <span id="current-page-label">Page 1</span>
+        <button id="next-btn" class="nav-btn" title="Next page">Next &rarr;</button>
+      </div>
       <audio id="audio-player" controls></audio>
-      <button id="download-btn" hidden>Download WAV</button>
+      <button id="stop-btn" hidden>Stop reading</button>
     </section>
   </main>
 
